@@ -1,0 +1,45 @@
+<?php
+
+function favorites_menu()
+    {
+        $items = array();
+        $items['movies'] = array(
+                'title' => 'My Recent Favorite Movies',
+                'page callback' => 'movies_display',
+                'access callback' => TRUE,
+                'type' => MENU_NORMAL_ITEM,
+        );
+
+        $items['books'] = array(
+                'title' => 'Some of my Favorites Books',
+                'page callback' => 'books_display',
+                'access callback' => TRUE,
+                'type' => MENU_NORMAL_ITEM,
+        );
+
+        return $items;
+    }
+
+function movies_display()
+    {
+        return '
+                <h2>Here are three of my recent favorite movies:</h2>
+                <ul>
+                    <li><a href="https://youtu.be/LPKhWXhiMSw">Tinker Tailor Soldier Spy</li>
+                    <li><a href="https://youtu.be/7N8wkVA4_8s">Moonrise Kingdom</li>
+                    <li><a href="https://youtu.be/gpEh4O8Hb5Y">El Laberinto del Fauno</li>
+                </ul>
+
+        ';
+    };
+
+function books_display() {
+        return '
+                <h2>Here are just a few of my favorite books to read:</h2>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Harry_Potter_and_the_Deathly_Hallows">Harry Potter and the Deathly Hollows</li>
+                    <li><a href="https://en.wikipedia.org/wiki/The_Kingkiller_Chronicle">The King Killer Chronicles</li>
+                    <li><a href="https://en.wikipedia.org/wiki/American_Gods">American Gods</li>
+                </ul>
+        ';
+    };
