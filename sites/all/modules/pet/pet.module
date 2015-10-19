@@ -1,0 +1,26 @@
+<?php
+
+function pet_menu() {
+    $items = array();
+    $items['pet'] = array(
+          'title' => 'My favorite Animal Friends',
+          'page callback' => 'pet_display',
+          'access callback' => TRUE,
+          'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+
+}
+
+
+function pet_display()
+{
+    $path = drupal_get_path('module', 'pet') . '/img/ollie.jpg';
+
+    return '
+          <h3>I have some really cool animal friends!</h3>
+          <img src="' . $path . '" alt="this is ollie" height=300 rotate=180>
+          <p>Ollie is the cutest golden lab. She is very cute! She gets very excited to see me because I always bring her treats when I come over to her house.</p>
+
+  ';
+}
